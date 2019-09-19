@@ -5,7 +5,7 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package edu.wpi.first.wpilibj.templates.commandbased;
+package frc.robot;
 
 import edu.wpi.first.wpilibj.RobotBase;
 
