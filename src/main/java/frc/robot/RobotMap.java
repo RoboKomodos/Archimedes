@@ -18,8 +18,8 @@ public class RobotMap {
   public static int leftDrive =0;//victor motor controller
   public static int rightDrive = 1;//victor motor controller
   //The two launch motors
-  private static int launchMotor1 = 3;//victor motor controller
-  private static int launchMotor2 = 4;//victor motor controller
+  public static int launchMotor1 = 3;//victor motor controller
+  public static int launchMotor2 = 4;//victor motor controller
   //The actuator used to push the frisbee into the wheels 
-  private static int actuator = 2;// victor motor controller
+  public static int actuator = 2;// victor motor controller
 }
