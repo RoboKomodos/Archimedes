@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.*;
 
 public class OI {
-  public boolean motorStatus = false
 
   //init joystick
   public final Joystick logitech = new Joystick(RobotMap.logitech);
@@ -21,17 +20,7 @@ public class OI {
   public final JoystickButton launchButton = new JoystickButton(logitech, RobotMap.launchButton);
   public final JoystickButton actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
   
-  public void motorToggle(){
-    if(motorStatus = false){
-      motorStatus = true;
-    }
-    if(motorStatus = true){
-      motorStatus = false;
-    }
-  }
   
-
-
   //get x pos
   public double getJoyX(){
     double xAxis = logitech.getX();
@@ -45,7 +34,10 @@ public class OI {
   }
 
 
-  public OI(){}
+  public OI(){
+    launchButton.whenPressed(new startMotors());
+    actuatorButton.whenPressed(new runActuator());
+  }
 }
 
 

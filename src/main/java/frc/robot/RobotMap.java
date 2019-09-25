@@ -26,6 +26,6 @@ public class RobotMap{
   //The controller
   public final static int logitech = 0;
   //Controller Buttons
-  public final static int launchButton = 0;
+  public final static int launchButton = 2;
   public final static int actuatorButton = 1;
 }

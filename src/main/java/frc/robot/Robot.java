@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.actuatorSubsystem;
 import frc.robot.subsystems.driveSubsystem;
 import frc.robot.subsystems.launchSubsystem;
 
@@ -29,6 +30,7 @@ public class Robot extends TimedRobot {
   public static OI m_oi;
   public static driveSubsystem m_drive;
   public static launchSubsystem m_launch;
+  public static actuatorSubsystem m_actuator;
 
 
   Command m_autonomousCommand;
@@ -43,6 +45,7 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     m_drive = new driveSubsystem();
     m_launch = new launchSubsystem();
+    m_actuator = new actuatorSubsystem();
     
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
