@@ -8,12 +8,19 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.*;
 
 public class OI {
 
   //init joystick
   public final Joystick logitech = new Joystick(RobotMap.logitech);
   public static final double logitechDeadzone = 0.05;
+  //init buttons
+  public final JoystickButton launchButton = new JoystickButton(logitech, RobotMap.launchButton);
+  public final JoystickButton actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
+  
+
 
   //get x pos
   public double getJoyX(){
@@ -26,6 +33,8 @@ public class OI {
     double yAxis = logitech.getY();
     return Math.abs(yAxis) < logitechDeadzone ? 0.0 : yAxis;
   }
+
+
   public OI(){}
 }
 

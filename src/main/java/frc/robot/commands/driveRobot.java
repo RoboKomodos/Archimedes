@@ -4,12 +4,13 @@ import edu.wpi.first.wpilibj.command.*;
 import frc.robot.Robot;
 import frc.robot.subsystems.*;
 
-/**
- * An example command.  You can replace me with your own command.
- */
+
 public class driveRobot extends Command {
+  //init values
+  double leftValue, rightValue;
+
   public driveRobot() {
-    // Use requires() here to declare subsystem dependencies
+    //Declares drive subsystem needed
     requires(Robot.m_drive);
   }
 
@@ -20,8 +21,12 @@ public class driveRobot extends Command {
 
   // Called repeatedly when this Command is scheduled to run
   @Override
-  protected void execute() {    
-    Robot.m_drive.setSpeeds(Robot.m_oi.get, rightValue);
+  protected void execute() {
+    //get motor values from joystick position
+    leftValue = Robot.m_drive.findLeftSpeed(Robot.m_oi.getJoyX(), Robot.m_oi.getJoyY());
+    rightValue = Robot.m_drive.findRightSpeed(Robot.m_oi.getJoyX(), Robot.m_oi.getJoyY());
+    //sets motor values
+    Robot.m_drive.setSpeeds(leftValue, rightValue);
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +44,5 @@ public class driveRobot extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }
