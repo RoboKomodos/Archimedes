@@ -10,7 +10,7 @@ import frc.robot.subsystems.launchSubsystem;;
 public class startMotors extends Command {
   public startMotors() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.m_launch);
   }
 
   // Called just before this Command runs the first time
