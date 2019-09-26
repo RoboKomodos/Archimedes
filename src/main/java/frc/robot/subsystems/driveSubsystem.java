@@ -80,7 +80,7 @@ public class driveSubsystem extends Subsystem {
                 rightValue = y_pos - Math.abs(x_pos);
             }
         }
-        return rightValue;
+        return -rightValue;
     }
 
     @Override

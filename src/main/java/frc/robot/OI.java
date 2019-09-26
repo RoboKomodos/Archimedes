@@ -9,13 +9,12 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.*;
 
 public class OI {
 
   //init joystick
   public final Joystick logitech = new Joystick(RobotMap.logitech);
-  public static final double logitechDeadzone = 0.05;
+  public static final double logitechDeadzone = 0.1;
   //init buttons
   public final JoystickButton launchButton = new JoystickButton(logitech, RobotMap.launchButton);
   public final JoystickButton actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
@@ -35,8 +34,6 @@ public class OI {
 
 
   public OI(){
-    launchButton.whenPressed(new startMotors());
-    actuatorButton.whenPressed(new runActuator());
   }
 }
 
