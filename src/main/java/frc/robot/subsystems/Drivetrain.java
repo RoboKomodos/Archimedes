@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.Drive;
 
 public class Drivetrain extends Subsystem {
     private Victor leftMotor;
@@ -14,8 +15,7 @@ public class Drivetrain extends Subsystem {
 
     @Override
     protected void initDefaultCommand() {
-        
-
+        setDefaultCommand(new Drive());
     }
 
     public void setSpeed(double leftSpeed, double rightSpeed){
@@ -23,7 +23,7 @@ public class Drivetrain extends Subsystem {
         rightMotor.set(rightSpeed);
     }
     /** 
-     * Joystick to Drivetrain formula
+     *  Joystick to Drivetrain formula
      *  Accepts values from -1 to 1
      *  http://home.kendra.com/mauser/joystick.html
      */

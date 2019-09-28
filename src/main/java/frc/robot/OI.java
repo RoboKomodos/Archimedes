@@ -18,6 +18,12 @@ public class OI {
   public OI(){
 
   }
+  public double getX(){
+    return logitech.getX();
+  }
+  public double getY(){
+    return logitech.getY();
+  }
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
