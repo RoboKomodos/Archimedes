@@ -7,14 +7,31 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
 
 /**
  * Add your docs here.
  */
 public class LaunchMotors extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  private Victor leftMotor;
+  private Victor rightMotor;
+  private double speed=0.2;
+  public LaunchMotors(){
+    leftMotor = new Victor(RobotMap.launchMotor1);
+    rightMotor = new Victor(RobotMap.launchMotor2);
+  }
+
+  public void start(){
+    leftMotor.set(speed);
+    rightMotor.set(speed);
+  }
+
+  public void stop(){
+    leftMotor.set(speed);
+    rightMotor.set(speed);
+  }
 
   @Override
   public void initDefaultCommand() {
