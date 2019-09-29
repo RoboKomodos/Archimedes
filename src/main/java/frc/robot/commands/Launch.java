@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 public class Launch extends Command {
   public Launch() {
@@ -23,6 +24,7 @@ public class Launch extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.m_launcher.start();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -34,6 +36,7 @@ public class Launch extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
+    Robot.m_launcher.stop();
   }
 
   // Called when another command which requires one or more of the same

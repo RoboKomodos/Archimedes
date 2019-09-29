@@ -29,8 +29,8 @@ public class LaunchMotors extends Subsystem {
   }
 
   public void stop(){
-    leftMotor.set(speed);
-    rightMotor.set(speed);
+    leftMotor.set(0);
+    rightMotor.set(0);
   }
 
   @Override
