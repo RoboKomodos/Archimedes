@@ -7,8 +7,8 @@ import frc.robot.Robot;
  * An example command.  You can replace me with your own command.
  */
 public class controlMotors extends Command {
-    private boolean areMotorsOn;
-    private boolean done = false;
+  private boolean areMotorsOn;
+  private boolean done = false;
   public controlMotors() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_launch);
@@ -17,7 +17,7 @@ public class controlMotors extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-      areMotorsOn = Robot.m_launch.areMotorsRunning();
+    areMotorsOn = Robot.m_launch.areMotorsRunning();
   }
 
   // Called repeatedly when this Command is scheduled to run

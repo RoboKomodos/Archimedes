@@ -25,58 +25,58 @@ public class driveSubsystem extends Subsystem {
     //gets left speed from joystick position
     public double findLeftSpeed(double x_pos, double y_pos){
         double leftValue=0.0;
-        double rightValue=0.0;
+        //double rightValue=0.0;
         if(x_pos == 0.0){
             leftValue = y_pos;
-            rightValue = y_pos;
+            //rightValue = y_pos;
         }
         if(x_pos < 0.0){
             if(y_pos == 0.0){
                 leftValue = -x_pos;
-                rightValue = x_pos;
+                //rightValue = x_pos;
             }
             else{
                 leftValue = y_pos - Math.abs(x_pos);
-                rightValue = y_pos;
+                //rightValue = y_pos;
             }
         }
         if(x_pos > 0.0){
             if(y_pos == 0.0){
                 leftValue = x_pos;
-                rightValue = -x_pos;
+                //rightValue = -x_pos;
             }
             else{
                 leftValue = y_pos;
-                rightValue = y_pos - Math.abs(x_pos);
+                //rightValue = y_pos - Math.abs(x_pos);
             }
         }
         return leftValue;
     }
     //gets right speed from joystick position
     public double findRightSpeed(double x_pos, double y_pos){
-        double leftValue = 0.0;
+        //double leftValue = 0.0;
         double rightValue = 0.0;
         if(x_pos == 0.0){
-            leftValue = y_pos;
+            //leftValue = y_pos;
             rightValue = y_pos;
         }
         if(x_pos < 0.0){
             if(y_pos == 0.0){
-                leftValue = -x_pos;
+                //leftValue = -x_pos;
                 rightValue = x_pos;
             }
             else{
-                leftValue = y_pos - Math.abs(x_pos);
+                //leftValue = y_pos - Math.abs(x_pos);
                 rightValue = y_pos;
             }
         }
         if(x_pos > 0.0){
             if(y_pos == 0.0){
-                leftValue = x_pos;
+                //leftValue = x_pos;
                 rightValue = -x_pos;
             }
             else{
-                leftValue = y_pos;
+                //leftValue = y_pos;
                 rightValue = y_pos - Math.abs(x_pos);
             }
         }
