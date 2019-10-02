@@ -19,10 +19,10 @@ public class OI {
 
   }
   public double getX(){
-    return logitech.getX();
+    return Math.abs(logitech.getX())<0.5?0:logitech.getX();
   }
   public double getY(){
-    return logitech.getY();
+    return Math.abs(logitech.getY())<0.5?0:logitech.getY();
   }
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
