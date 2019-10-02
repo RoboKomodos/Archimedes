@@ -11,7 +11,7 @@ public class actuatorSubsystem extends Subsystem {
         actuatorMotor = new Victor(RobotMap.actuator);
     }
     public void runMotor(){
-        actuatorMotor.set(.1);
+        actuatorMotor.set(.05);
         
     }
     @Override
