@@ -17,22 +17,23 @@ public class controlMotors extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    System.out.println("got to init in controlmotors");
     areMotorsOn = Robot.m_launch.areMotorsRunning();
+    if(areMotorsOn == false){
+      Robot.m_launch.startMotors();
+      done = true;
   }
+  else{
+      Robot.m_launch.stopMotors();
+      done = true;
+  }
+}
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(areMotorsOn == false){
-        Robot.m_launch.startMotors();
-        done = true;
-    }
-    else{
-        Robot.m_launch.stopMotors();
-        done = true;
-    }
-  }
 
+  }
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
