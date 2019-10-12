@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.controlMotors;
+import edu.wpi.first.wpilibj.command.Command;
 
 public class OI {
 
@@ -32,10 +33,13 @@ public class OI {
     double yAxis = logitech.getY();
     return Math.abs(yAxis) < logitechDeadzone ? 0.0 : yAxis;
   }
-
+/*
+  Command motorCommand = new controlMotors();
+*/
 
   public OI(){
     launchButton.whenPressed(new controlMotors());
+    //launchButton.whenPressed(controlMotors.start());
   }
 }
 

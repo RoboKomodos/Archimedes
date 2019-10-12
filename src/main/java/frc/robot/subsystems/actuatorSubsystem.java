@@ -10,9 +10,28 @@ public class actuatorSubsystem extends Subsystem {
     public actuatorSubsystem(){
         actuatorMotor = new Victor(RobotMap.actuator);
     }
+
     public void runMotor(){
+        long starttime = System.nanoTime();
         actuatorMotor.set(.05);
+        while(true){
+            if(System.nanoTime() > 30){
+                actuatorMotor.set(0.0);
+                break;
+            }
+        }
         
+    }
+
+    public void stopMotor(){
+        long starttime = System.nanoTime();
+        actuatorMotor.set(-.05);
+        while(true){
+            if(System.nanoTime() > 30){
+                actuatorMotor.set(0.0);
+                break;
+            }
+        }
     }
     @Override
     public void initDefaultCommand() {
