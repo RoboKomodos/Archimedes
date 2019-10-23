@@ -25,13 +25,6 @@ public class launchSubsystem extends Subsystem {
   }
 
   public boolean areMotorsRunning(){
-    /*double speed = motor1.getSpeed();
-    if(speed == 0.0){
-      return false;
-    }
-    else{
-      return true;
-    }*/
     return motor1.getSpeed() == 0.0 ? false : true;
   }
   
