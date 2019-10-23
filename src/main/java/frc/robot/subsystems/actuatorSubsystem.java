@@ -15,7 +15,7 @@ public class actuatorSubsystem extends Subsystem {
         long starttime = System.nanoTime();
         actuatorMotor.set(.05);
         while(true){
-            if(System.nanoTime() > 30){
+            if((System.nanoTime() - starttime) > 30){
                 actuatorMotor.set(0.0);
                 break;
             }
@@ -27,7 +27,7 @@ public class actuatorSubsystem extends Subsystem {
         long starttime = System.nanoTime();
         actuatorMotor.set(-.05);
         while(true){
-            if(System.nanoTime() > 30){
+            if((System.nanoTime() - starttime) > 30){
                 actuatorMotor.set(0.0);
                 break;
             }

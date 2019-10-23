@@ -15,7 +15,7 @@ public class controlMotors extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    System.out.println("got to init in controlmotors");
+    System.out.println("got to controlMotors init");
     areMotorsOn = Robot.m_launch.areMotorsRunning();
     if(areMotorsOn == false){
       Robot.m_launch.startMotors();
