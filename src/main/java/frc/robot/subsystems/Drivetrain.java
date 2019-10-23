@@ -36,9 +36,12 @@ public class Drivetrain extends Subsystem {
   *  http://home.kendra.com/mauser/joystick.html
   */
   public void setJoystickPosition(double dx, double dy){
-    double v=(2-Math.abs(dx))*dy;
-    double w=(2-Math.abs(dy))*dx;
-    setSpeed((v-w)/2,(v+w)/2);
+    /**
+     * double v=(2-Math.abs(dx))*dy;
+     * double w=(2-Math.abs(dy))*dx;
+     * setSpeed((v-w)/2,(v+w)/2);
+     */
+    setSpeed(dx+dy,dy-dx);
   }
   @Override
   public void initDefaultCommand() {
