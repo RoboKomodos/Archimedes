@@ -41,6 +41,9 @@ public class Drivetrain extends Subsystem {
      * double w=(2-Math.abs(dy))*dx;
      * setSpeed((v-w)/2,(v+w)/2);
      */
+    if(dy>0){
+      dy*=-1;
+    }
     setSpeed(dx+dy,dy-dx);
   }
   @Override

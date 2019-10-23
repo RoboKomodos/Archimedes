@@ -19,7 +19,7 @@ public class OI {
 
   }
   public double getX(){
-    return Math.abs(logitech.getX())<0.05?0:logitech.getX();
+    return Math.abs(logitech.getX())<0.05?0:-logitech.getX();
   }
   public double getY(){
     return Math.abs(logitech.getY())<0.05?0:logitech.getY();
