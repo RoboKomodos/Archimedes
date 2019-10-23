@@ -1,29 +1,21 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
 //controls launch motors
-public class controlMotors extends Command {
-  private boolean areMotorsOn;
+public class controlActuator extends TimedCommand {
   private boolean done = false;
-  public controlMotors() {
+  public controlActuator() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_launch);
+    requires(Robot.m_actuator);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    areMotorsOn = Robot.m_launch.areMotorsRunning();
-    if(areMotorsOn == false){
-      Robot.m_launch.startMotors();
-      done = true;
-  }
-  else{
-      Robot.m_launch.stopMotors();
-      done = true;
-  }
+    
+  
 }
 
   // Called repeatedly when this Command is scheduled to run

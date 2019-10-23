@@ -15,8 +15,8 @@ public class launchSubsystem extends Subsystem {
   }
 
   public void startMotors(){
-    motor1.set(0.5);
-    motor2.set(0.5);
+    motor1.set(0.4);
+    motor2.set(0.4);
   }
 
   public void stopMotors(){

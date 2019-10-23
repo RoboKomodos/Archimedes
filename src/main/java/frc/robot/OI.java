@@ -34,13 +34,10 @@ public class OI {
     double yAxis = logitech.getY();
     return Math.abs(yAxis) < logitechDeadzone ? 0.0 : yAxis;
   }
-/*
-  Command motorCommand = new controlMotors();
-*/
+
 
   public OI(){
     launchButton.whenPressed(new controlMotors());
-    //launchButton.whenPressed(controlMotors.start());
   }
 }
 
