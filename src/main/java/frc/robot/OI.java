@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Button;
 import frc.robot.commands.controlMotors;
+import frc.robot.commands.actuatorGroup;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class OI {
@@ -38,6 +39,7 @@ public class OI {
 
   public OI(){
     launchButton.whenPressed(new controlMotors());
+    actuatorButton.whenPressed(new actuatorGroup());
   }
 }
 

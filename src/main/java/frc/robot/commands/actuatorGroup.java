@@ -8,12 +8,19 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import frc.robot.Robot;
+import frc.robot.commands.actuator.actuatorBackwards;
+import frc.robot.commands.actuator.actuatorForward;
 
 public class actuatorGroup extends CommandGroup {
   /**
    * Add your docs here.
    */
   public actuatorGroup() {
+    requires(Robot.m_actuator);
+    addSequential(new actuatorForward(0.7));
+    addSequential(new actuatorBackwards(1.2));
+    
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
