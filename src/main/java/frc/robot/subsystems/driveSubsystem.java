@@ -32,7 +32,8 @@ public class driveSubsystem extends Subsystem {
         }
         if(x_pos < 0.0){
             if(y_pos == 0.0){
-                leftValue = -x_pos;
+                //this was negative, might need to be changed back
+                leftValue = x_pos;
                 //rightValue = x_pos;
             }
             else{
