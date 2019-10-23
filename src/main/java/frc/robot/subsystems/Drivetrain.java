@@ -33,17 +33,10 @@ public class Drivetrain extends Subsystem {
   /** 
   *  Joystick to Drivetrain formula
   *  Accepts values from -1 to 1
-  *  http://home.kendra.com/mauser/joystick.html
+  *  See http://home.kendra.com/mauser/joystick.html for ideas
   */
   public void setJoystickPosition(double dx, double dy){
-    /**
-     * double v=(2-Math.abs(dx))*dy;
-     * double w=(2-Math.abs(dy))*dx;
-     * setSpeed((v-w)/2,(v+w)/2);
-     */
-    if(dy>0){
-      dy*=-1;
-    }
+    //Turning is backwards
     setSpeed(dx+dy,dy-dx);
   }
   @Override
