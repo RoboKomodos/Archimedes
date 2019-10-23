@@ -19,7 +19,7 @@ public class actuatorGroup extends CommandGroup {
   public actuatorGroup() {
     requires(Robot.m_actuator);
     addSequential(new actuatorForward(0.7));
-    addSequential(new actuatorBackwards(1.2));
+    addSequential(new actuatorBackwards(0.9));
     
     // Add Commands here:
     // e.g. addSequential(new Command1());
