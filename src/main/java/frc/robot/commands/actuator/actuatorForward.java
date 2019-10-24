@@ -9,7 +9,6 @@ package frc.robot.commands.actuator;
 
 import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
-import frc.robot.subsystems.actuatorSubsystem;
 
 /**
  * Add your docs here.
