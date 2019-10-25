@@ -21,6 +21,7 @@ public class OI {
   //init buttons
   public final Button launchButton = new JoystickButton(logitech, RobotMap.launchButton);
   public final Button actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
+  public final Joystick speedDial = new Joystick(RobotMap.speedDial); 
   
   
   //get x pos
@@ -33,6 +34,10 @@ public class OI {
   public double getJoyY(){
     double yAxis = logitech.getY();
     return Math.abs(yAxis) < logitechDeadzone ? 0.0 : yAxis;
+  }
+  //get dial position
+  public double getSpeedDial(){
+    return speedDial.getMagnitude();
   }
 
 

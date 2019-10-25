@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.launchSubsystem;
 
 //controls launch motors
 public class controlMotors extends Command {
@@ -16,19 +17,22 @@ public class controlMotors extends Command {
   @Override
   protected void initialize() {
     areMotorsOn = Robot.m_launch.areMotorsRunning();
-    if(areMotorsOn == false){
-      Robot.m_launch.startMotors();
-      done = true;
-  }
-  else{
+    if(areMotorsOn == true){
+      Robot.m_launch.runLoop = false;
       Robot.m_launch.stopMotors();
       done = true;
+    }
+    else{
+      Robot.m_launch.runLoop = true;
+      Robot.m_launch.motorLoop();
+      done = true;
+    }
   }
-}
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+
 
   }
   // Make this return true when this Command no longer needs to run execute()

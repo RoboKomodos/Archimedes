@@ -23,10 +23,10 @@ public class RobotMap{
   public final static int launchMotor2 = 4;//victor motor controller
   //The actuator used to push the frisbee into the wheels 
   public final static int actuator = 2;// victor motor controller
-  public final static double launchMotorSpeed = 0.4;//launch motor speed
   //The controller
   public final static int logitech = 0;
   //Controller Buttons
   public final static int launchButton = 2;
   public final static int actuatorButton = 1;
+  public final static int speedDial = 9;
 }
