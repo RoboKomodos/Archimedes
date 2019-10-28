@@ -36,10 +36,11 @@ public class OI {
   }
   //get dial position
   public double getSpeedDial(){
-    return speedDial.getMagnitude();
+    return speedDial.getRawAxis(RobotMap.speedDial);
   }
+  
 
-
+  //listens for button presses
   public OI(){
     launchButton.whenPressed(new controlMotors());
     actuatorButton.whenPressed(new actuatorGroup());

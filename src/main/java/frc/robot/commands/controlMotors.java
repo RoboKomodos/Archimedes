@@ -14,6 +14,7 @@ public class controlMotors extends Command {
 
   // Called just before this Command runs the first time
   @Override
+  //toggles motors based on if they are running or not
   protected void initialize() {
     areMotorsOn = Robot.m_launch.areMotorsRunning();
     if(areMotorsOn == true){

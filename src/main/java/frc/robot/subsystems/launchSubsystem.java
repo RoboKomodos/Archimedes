@@ -7,30 +7,34 @@ import frc.robot.RobotMap;
 
 
 public class launchSubsystem extends Subsystem {
+  //motor controllers
   private Victor motor1;
   private Victor motor2;
+  //bool for starting/stopping loop
   public boolean runLoop = false;
-
+  
+  //init motor controllers
   public launchSubsystem(){
     motor1 = new Victor(RobotMap.launchMotor1);
     motor2 = new Victor(RobotMap.launchMotor2);
   }
-
+  //continuously gets new speed from dial
   public void motorLoop(){
     while(runLoop == true){
       startMotors(Robot.m_oi.getSpeedDial());
     }
   }
+  //set motor speed
   public void startMotors(double speed){
     motor1.set(speed);
     motor2.set(speed);
   }
-
+  //stops motors
   public void stopMotors(){
     motor1.set(0.0);
     motor2.set(0.0);
   }
-
+  //returns t/f based on motor speed
   public boolean areMotorsRunning(){
     return motor1.getSpeed() == 0.0 ? false : true;
   }
