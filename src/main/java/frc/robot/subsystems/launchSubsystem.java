@@ -22,6 +22,7 @@ public class launchSubsystem extends Subsystem {
   public void motorLoop(){
     while(runLoop == true){
       startMotors(Robot.m_oi.getSpeedDial());
+      System.out.println(Robot.m_oi.getSpeedDial());
     }
   }
   //set motor speed
