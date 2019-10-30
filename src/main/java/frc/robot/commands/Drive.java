@@ -11,7 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class Drive extends Command {
-
+/**
+ * This class is the drive command that communicates the joystick movement (see OI.java)
+ * to the drivetrain.
+ */
 public Drive() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);

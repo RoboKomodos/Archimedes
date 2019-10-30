@@ -13,7 +13,7 @@ import frc.robot.RobotMap;
 import frc.robot.commands.Drive;
 
 /**
- * Add your docs here.
+ * This is the class that controls the drivetrain, it acts as the legs of the robot
  */
 public class Drivetrain extends Subsystem {
   // Put methods for controlling this subsystem
@@ -24,7 +24,6 @@ public class Drivetrain extends Subsystem {
     leftMotor=new Victor(RobotMap.leftDrive);
     rightMotor=new Victor(RobotMap.rightDrive);
   }
-
   public void setSpeed(double left, double right){
     leftMotor.set(left);
     rightMotor.set(-right);
@@ -33,10 +32,8 @@ public class Drivetrain extends Subsystem {
   /** 
   *  Joystick to Drivetrain formula
   *  Accepts values from -1 to 1
-  *  See http://home.kendra.com/mauser/joystick.html for ideas
   */
   public void setJoystickPosition(double dx, double dy){
-    //Turning is backwards
     if(dy<0){
       setSpeed(dy-dx,dx+dy);
     }else{
