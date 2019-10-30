@@ -34,10 +34,11 @@ public class Drivetrain extends Subsystem {
   *  Accepts values from -1 to 1
   */
   public void setJoystickPosition(double dx, double dy){
-    if(dy<0){
-      setSpeed(dy-dx,dx+dy);
-    }else{
+    //Turning is backwards
+    if(dy>0){
       setSpeed(dx+dy,dy-dx);
+    }else{
+      setSpeed(dy-dx,dx+dy);
     }
   }
   @Override
