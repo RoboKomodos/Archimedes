@@ -37,7 +37,11 @@ public class Drivetrain extends Subsystem {
   */
   public void setJoystickPosition(double dx, double dy){
     //Turning is backwards
-    setSpeed(dx+dy,dy-dx);
+    if(dy<0){
+      setSpeed(dy-dx,dx+dy);
+    }else{
+      setSpeed(dx+dy,dy-dx);
+    }
   }
   @Override
   public void initDefaultCommand() {
