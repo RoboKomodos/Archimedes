@@ -35,6 +35,7 @@ public class Drivetrain extends Subsystem {
   */
   public void setJoystickPosition(double dx, double dy){
     //Turning is backwards
+    //There should not be an if statement here. I will looka at debugging this with you.
     if(dy>0){
       setSpeed(dx+dy,dy-dx);
     }else{
