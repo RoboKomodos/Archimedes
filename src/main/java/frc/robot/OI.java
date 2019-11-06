@@ -19,6 +19,7 @@ public class OI {
   public OI(){
 
   }
+  // The deadzone value of 0.05 should be put in a variable so that it can be easily changed.
   public double getX(){
     return Math.abs(logitech.getX())<deadzone?0:-logitech.getX();
   }
