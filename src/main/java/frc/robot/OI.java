@@ -15,14 +15,15 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
   Joystick logitech = new Joystick(0);
+  Double deadzone = 0.05;
   public OI(){
 
   }
   public double getX(){
-    return Math.abs(logitech.getX())<0.05?0:-logitech.getX();
+    return Math.abs(logitech.getX())<deadzone?0:-logitech.getX();
   }
   public double getY(){
-    return Math.abs(logitech.getY())<0.05?0:logitech.getY();
+    return Math.abs(logitech.getY())<deadzone?0:-logitech.getY();
   }
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
