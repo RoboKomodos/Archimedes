@@ -9,13 +9,12 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-
-public class Drive extends Command {
 /**
  * This class is the drive command that communicates the joystick movement (see OI.java)
- * to the drivetrain.
+ * to the drivetrain
  */
-public Drive() {
+public class Drive extends Command {
+  public Drive() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_drivetrain);
@@ -29,6 +28,7 @@ public Drive() {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    // Processes the joystick position in Drivetrain.java and set the motor speeds.
     Robot.m_drivetrain.setJoystickPosition(Robot.m_oi.getX(),Robot.m_oi.getY());
   }
 
