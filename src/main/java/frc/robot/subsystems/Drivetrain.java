@@ -28,8 +28,8 @@ public class Drivetrain extends Subsystem {
    * @param right value from -1 to 1 (right motor is flipped)
    */
   public void setSpeed(double left, double right){
-    leftMotor.set(left);
-    rightMotor.set(-right);
+    leftMotor.set(-left);
+    rightMotor.set(right);
   }
   /**
    * Set the motor speeds based off of joystic position

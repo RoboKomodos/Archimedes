@@ -21,11 +21,11 @@ public class OI {
   }
   public double getX(){
     // If |joystick X position|>deadzone, retun 0
-    return Math.abs(logitech.getX())<deadzone?0:-logitech.getX();
+    return Math.abs(logitech.getX())<deadzone?0:logitech.getX();
   }
   public double getY(){
     // If |joystick Y position|>deadzone, retun 0
-    return Math.abs(logitech.getY())<deadzone?0:logitech.getY();
+    return Math.abs(logitech.getY())<deadzone?0:-logitech.getY();
   }
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
