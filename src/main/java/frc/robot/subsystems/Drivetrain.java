@@ -23,16 +23,15 @@ public class Drivetrain extends Subsystem {
     rightMotor=new Victor(RobotMap.rightDrive);
   }
   /**
-   * 
-   * @param left value from -1 to 1
-   * @param right value from -1 to 1 (right motor is flipped)
+   * @param left value from -1 to 1 (left motor is flipped)
+   * @param right value from -1 to 1
    */
   public void setSpeed(double left, double right){
     leftMotor.set(-left);
     rightMotor.set(right);
   }
   /**
-   * Set the motor speeds based off of joystic position
+   * Set the motor speeds based off of joystick position
    * @param dx value from -1 to 1
    * @param dy value from -1 to 1
    */
