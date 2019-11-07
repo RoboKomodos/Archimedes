@@ -15,8 +15,24 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
   Joystick logitech = new Joystick(0);
+  Double deadzone = 0.05;
   public OI(){
 
+  }
+  /**
+   * @return x
+   */
+  public double getX(){
+    // If |joystick X position|>deadzone, retun 0
+    return Math.abs(logitech.getX())<deadzone?0:logitech.getX();
+  }
+  /**
+   * Y position on the joystick is the opposite of what is intuitive (forward=negative).
+   * @return y
+   */
+  public double getY(){
+    // If |joystick Y position|>deadzone, retun 0
+    return Math.abs(logitech.getY())<deadzone?0:-logitech.getY();
   }
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
