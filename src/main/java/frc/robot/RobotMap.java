@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -14,6 +16,8 @@ package frc.robot;
  * floating around.
  */
 public class RobotMap {
+  public static final int joystickNumber = 0;
+  public static final Subsystem m_actuator = null;
   //The left and right wheel ports
   public static int leftDrive =0;//victor motor controller
   public static int rightDrive = 1;//victor motor controller

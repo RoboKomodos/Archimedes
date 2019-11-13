@@ -8,16 +8,21 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commandgroups.LaunchActuator;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  Joystick logitech = new Joystick(0);
+  Joystick logitech = new Joystick(RobotMap.joystickNumber);
   Double deadzone = 0.05;
+  int actuatorButtonNumber=0;
+  Button actuatorButton = new JoystickButton(logitech,actuatorButtonNumber);
   public OI(){
-
+    actuatorButton.whenPressed(new LaunchActuator());
   }
   /**
    * @return x
