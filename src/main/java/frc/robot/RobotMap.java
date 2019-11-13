@@ -29,4 +29,5 @@ public class RobotMap{
   public final static int launchButton = 2;
   public final static int actuatorButton = 1;
   public final static int speedDial = 2;
+  public final static int speedButton = 7;
 }

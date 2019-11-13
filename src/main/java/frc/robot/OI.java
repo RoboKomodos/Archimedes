@@ -10,8 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.Button;
-import frc.robot.commands.controlMotors;
-import frc.robot.commands.actuatorGroup;
+import frc.robot.commands.*;
 
 public class OI {
 
@@ -22,6 +21,7 @@ public class OI {
   public final Button launchButton = new JoystickButton(logitech, RobotMap.launchButton);
   public final Button actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
   public final Joystick speedDial = new Joystick(RobotMap.speedDial);
+  public final Button speedButton  = new JoystickButton(logitech, RobotMap.speedButton);
   
   //get x pos
   public double getJoyX(){
@@ -35,7 +35,7 @@ public class OI {
     return Math.abs(yAxis) < logitechDeadzone ? 0.0 : yAxis;
   }
   //get dial position
-  public double getSpeedDial(){
+  public double getRawSpeedDial(){
     return speedDial.getRawAxis(RobotMap.speedDial);
   }
   
@@ -44,6 +44,7 @@ public class OI {
   public OI(){
     launchButton.whenPressed(new controlMotors());
     actuatorButton.whenPressed(new actuatorGroup());
+    speedButton.whenPressed(new updateSpeed());
   }
 }
 

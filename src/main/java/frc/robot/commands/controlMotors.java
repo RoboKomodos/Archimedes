@@ -18,13 +18,11 @@ public class controlMotors extends Command {
   protected void initialize() {
     areMotorsOn = Robot.m_launch.areMotorsRunning();
     if(areMotorsOn == true){
-      Robot.m_launch.runLoop = false;
       Robot.m_launch.stopMotors();
       done = true;
     }
     else{
-      Robot.m_launch.runLoop = true;
-      Robot.m_launch.motorLoop();
+      Robot.m_launch.startMotors(.4);
       done = true;
     }
   }

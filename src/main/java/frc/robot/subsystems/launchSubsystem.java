@@ -18,12 +18,6 @@ public class launchSubsystem extends Subsystem {
     motor1 = new Victor(RobotMap.launchMotor1);
     motor2 = new Victor(RobotMap.launchMotor2);
   }
-  //continuously gets new speed from dial
-  public void motorLoop(){
-    while(runLoop == true){
-      startMotors(Robot.m_oi.getSpeedDial());
-    }
-  }
   //set motor speed
   public void startMotors(double speed){
     motor1.set(speed);
