@@ -23,6 +23,7 @@ public class OI {
   public final Joystick speedDial = new Joystick(RobotMap.speedDial);
   public final Button speedButton  = new JoystickButton(logitech, RobotMap.speedButton);
   
+
   //get x pos
   public double getJoyX(){
     double xAxis = logitech.getX();
