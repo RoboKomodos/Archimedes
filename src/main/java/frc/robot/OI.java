@@ -19,7 +19,7 @@ import frc.robot.commandgroups.LaunchActuator;
 public class OI {
   Joystick logitech = new Joystick(RobotMap.joystickNumber);
   Double deadzone = 0.05;
-  int actuatorButtonNumber=0;
+  int actuatorButtonNumber=1;
   Button actuatorButton = new JoystickButton(logitech,actuatorButtonNumber);
   public OI(){
     actuatorButton.whenPressed(new LaunchActuator());

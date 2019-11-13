@@ -12,7 +12,6 @@ import frc.robot.commands.CloseActuator;
 import frc.robot.commands.OpenActuator;
 
 public class LaunchActuator extends CommandGroup {
-  private static boolean isRunning = false;
   /**
    * Add your docs here.
    */
@@ -21,8 +20,6 @@ public class LaunchActuator extends CommandGroup {
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
     // these will run in order.
-    if(!isRunning){
-      isRunning=true;
       addSequential(new OpenActuator(0.7));
       addSequential(new CloseActuator(0.9));
     }
@@ -39,4 +36,4 @@ public class LaunchActuator extends CommandGroup {
     // a CommandGroup containing them would require both the chassis and the
     // arm.
   }
-}
+

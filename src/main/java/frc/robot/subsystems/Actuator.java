@@ -35,7 +35,6 @@ public class Actuator extends Subsystem {
   }
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    setDefaultCommand(new LaunchActuator());
+    // Set the default command for a subsystem here
   }
 }
