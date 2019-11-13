@@ -23,10 +23,10 @@ public class updateSpeed extends Command {
   @Override
   protected void initialize() {
     if(Robot.m_launch.areMotorsRunning() == true){
-    //the dial ranges from -1 to 1 with zero in the middle. this makes
-    //it 0 to 1 with zero at the bottom
-    double newspeed = (1 + Robot.m_oi.speedDial.getRawAxis(RobotMap.speedDial)) / 2;
-    Robot.m_launch.startMotors(newspeed);
+      //the dial ranges from -1 to 1 with zero in the middle. this makes
+      //it 0 to 1 with zero at the bottom and returns that value
+      double newspeed = (1 + Robot.m_oi.speedDial.getRawAxis(RobotMap.speedDial)) / 2;
+      Robot.m_launch.startMotors(newspeed);
     }
     done = true;
   }

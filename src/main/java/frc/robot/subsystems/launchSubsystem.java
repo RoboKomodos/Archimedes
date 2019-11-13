@@ -10,8 +10,6 @@ public class launchSubsystem extends Subsystem {
   //motor controllers
   private Victor motor1;
   private Victor motor2;
-  //bool for starting/stopping loop
-  public boolean runLoop = false;
   
   //init motor controllers
   public launchSubsystem(){
