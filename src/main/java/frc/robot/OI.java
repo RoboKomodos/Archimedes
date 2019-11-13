@@ -20,7 +20,6 @@ public class OI {
   //init buttons
   public final Button launchButton = new JoystickButton(logitech, RobotMap.launchButton);
   public final Button actuatorButton = new JoystickButton(logitech, RobotMap.actuatorButton);
-  public final Joystick speedDial = new Joystick(RobotMap.speedDial);
   public final Button speedButton  = new JoystickButton(logitech, RobotMap.speedButton);
   
 
@@ -37,7 +36,7 @@ public class OI {
   }
   //get dial position
   public double getRawSpeedDial(){
-    return speedDial.getRawAxis(RobotMap.speedDial);
+    return logitech.getRawAxis(RobotMap.speedDial);
   }
   
 

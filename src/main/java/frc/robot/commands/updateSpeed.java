@@ -25,7 +25,7 @@ public class updateSpeed extends Command {
     if(Robot.m_launch.areMotorsRunning() == true){
       //the dial ranges from -1 to 1 with zero in the middle. this makes
       //it 0 to 1 with zero at the bottom and returns that value
-      double newspeed = (1 + Robot.m_oi.speedDial.getRawAxis(RobotMap.speedDial)) / 2;
+      double newspeed = (1 + Robot.m_oi.logitech.getRawAxis(RobotMap.speedDial)) / 2;
       Robot.m_launch.startMotors(newspeed);
     }
     done = true;
