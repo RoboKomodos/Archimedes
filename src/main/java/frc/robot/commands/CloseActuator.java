@@ -11,12 +11,9 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
 /**
- * Add your docs here.
+ * Closes the actuator for a set time. then stops it.
  */
 public class CloseActuator extends TimedCommand {
-  /**
-   * Add your docs here.
-   */
   public CloseActuator(double timeout) {
     super(timeout);
     // Use requires() here to declare subsystem dependencies

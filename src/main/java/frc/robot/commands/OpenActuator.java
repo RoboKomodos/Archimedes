@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 
 /**
- * Add your docs here.
+ * Opens the actuator for a set time, then ends.
  */
 public class OpenActuator extends TimedCommand {
   /**

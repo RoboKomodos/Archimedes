@@ -12,17 +12,15 @@ import frc.robot.commands.CloseActuator;
 import frc.robot.commands.OpenActuator;
 
 public class LaunchActuator extends CommandGroup {
+  private static double closeTime = 0.9;
+  private static double openTime = 0.7;
   /**
-   * Add your docs here.
+   * Automatically launches a single frisbee
    */
   public LaunchActuator() {
-    // Add Commands here:
-    // e.g. addSequential(new Command1());
-    // addSequential(new Command2());
-    // these will run in order.
-      addSequential(new OpenActuator(0.7));
-      addSequential(new CloseActuator(0.9));
-    }
+    addSequential(new OpenActuator(openTime));
+    addSequential(new CloseActuator(closeTime));
+  }
 
     // To run multiple commands at the same time,
     // use addParallel()
