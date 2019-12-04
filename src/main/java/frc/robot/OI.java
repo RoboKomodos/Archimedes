@@ -22,6 +22,7 @@ public class OI {
   int actuatorButtonNumber=1;
   Button actuatorButton = new JoystickButton(logitech,actuatorButtonNumber);
   public OI(){
+    // When the joystick actuator ("attack") button is pressed, run a timed sequence to launch the disc, if it is loaded.
     actuatorButton.whenPressed(new LaunchActuator());
   }
   /**
