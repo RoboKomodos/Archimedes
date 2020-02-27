@@ -9,9 +9,9 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.commands.ExampleCommand;
-import frc.robot.subsystems.ExampleSubsystem;
-import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
+import frc.robot.subsystems.Drivetrain;
+import edu.wpi.first.wpilibj2.command.*;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -21,20 +21,35 @@ import edu.wpi.first.wpilibj2.command.Command;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  Drivetrain m_drive;
 
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  XboxController xbox = new XboxController(Constants.controller);
 
-
-
-  /**
-   * The container for the robot.  Contains subsystems, OI devices, and commands.
-   */
   public RobotContainer() {
+    m_drive = new Drivetrain();
     // Configure the button bindings
     configureButtonBindings();
   }
-
+  
+  /**
+   * @return x
+   */
+  public double getX(){
+    // If |joystick X position|>deadzone, retun 0
+    return Math.abs(xbox.getX(Hand.kLeft))<Constants.driveDeadzone?0:xbox.getX(Hand.kLeft);
+  }
+  /**
+   * Y position on the joystick is the opposite of what is intuitive (forward=negative).
+   * @return y
+   */
+  public double getY(){
+    // If |joystick Y position|>deadzone, retun 0
+    return Math.abs(xbox.getY(Hand.kLeft))<Constants.driveDeadzone?0:-xbox.getY(Hand.kLeft);
+  }
+  /**
+   * The container for the robot.  Contains subsystems, OI devices, and commands.
+   */
+  
   /**
    * Use this method to define your button->command mappings.  Buttons can be created by
    * instantiating a {@link GenericHID} or one of its subclasses ({@link
@@ -42,6 +57,8 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+    m_drive.setDefaultCommand(new RunCommand(()->m_drive.setJoystickPosition(getX(), getY()), m_drive));
+    new AnalogButton(xbox, 3).whenPressed(new InstantCommand(()->m_drive.setSpeed(Constants.mikhail), m_drive)).whenReleased(new InstantCommand(()->m_drive.setSpeed(1.0), m_drive));
   }
 
 
@@ -52,6 +69,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return null;
   }
 }
