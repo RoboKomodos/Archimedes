@@ -34,8 +34,8 @@ public class Drivetrain extends SubsystemBase {
    * @param right value from -1 to 1
    */
   public void setMotors(double left, double right){
-    leftMotor.set(-left);
-    rightMotor.set(right);
+    leftMotor.set(-left*m_speed);
+    rightMotor.set(right*m_speed);
   }
 
   /**
