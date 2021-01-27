@@ -13,6 +13,9 @@ public class Drivetrain extends SubsystemBase {
   private Victor leftMotor;
   private Victor rightMotor;
   
+  private double speed = 1.0;
+  private boolean toggle = false;
+
   public Drivetrain(){
     leftMotor=new Victor(Constants.leftDrive);
     rightMotor=new Victor(Constants.rightDrive);
@@ -21,9 +24,9 @@ public class Drivetrain extends SubsystemBase {
    * @param left value from -1 to 1 (left motor is flipped)
    * @param right value from -1 to 1
    */
-  public void setSpeed(double left, double right){
-    leftMotor.set(-left);
-    rightMotor.set(right);
+  public void setMotors(double left, double right){
+    leftMotor.set(left*speed);
+    rightMotor.set(-right*speed);
   }
   /**
    * Set the motor speeds based off of joystick position
@@ -31,7 +34,18 @@ public class Drivetrain extends SubsystemBase {
    * @param dy value from -1 to 1
    */
   public void setJoystickPosition(double dx, double dy){
-    setSpeed(dx+dy,dy-dx);
+    setMotors(dx+dy,dy-dx);
+  }
+
+  public void toggleSpeed(){
+    if(toggle == false){
+      speed = Constants.mikhail;
+      toggle = true;
+    }
+    else{
+      speed = 1.0;
+      toggle = false;
+    }
   }
 
   @Override
